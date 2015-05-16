@@ -76,7 +76,7 @@ angular.module('inspirapp.db', ['inspirapp.ajax'])
                 });
 
                 getRequest.addEventListener('error', function(e) {
-                    success('Sorry. Impossible to get inspiration.');
+                    success({});
                 });
             });
         };

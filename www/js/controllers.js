@@ -4,6 +4,7 @@ angular.module('starter.controllers', ['inspirapp.db'])
 
 	db.get('3', function(data){
 		$scope.inspiration = data.inspiration;
+		$scope.$apply();
 
 	});
 	
