@@ -1,5 +1,8 @@
 <ion-view view-title="Inspiración del Día">
-  <ion-content class="padding">
-	<h1>{{inspiration}}</h1>  
-  </ion-content>
+    <ion-content class="padding">
+        <format-text ng-show="type==='formattext'"></format-text>
+        <mp3 ng-show="type==='mp3'"></mp3>
+        <text ng-show="type==='text'"></text>
+        
+    </ion-content>
 </ion-view>
