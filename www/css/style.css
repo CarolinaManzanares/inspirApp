@@ -1,1 +1,8 @@
-/* Empty. Add your own CSS if you like */
+.formattext {
+    text-align: center;
+}
+
+.formattext .h1 {
+	font-size: 1.7em;
+	padding: 0.5em;
+}

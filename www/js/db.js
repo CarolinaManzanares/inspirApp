@@ -4,7 +4,7 @@ angular.module('inspirapp.db', ['inspirapp.ajax'])
         var db = null,
             cfg = {
                 name: 'Inspirations.db',
-                version: 2,
+                version: 1,
                 description: 'Inspirations database',
                 size: 1 * 1024
             },
@@ -72,10 +72,12 @@ angular.module('inspirapp.db', ['inspirapp.ajax'])
                 var getRequest = store.get(id);
 
                 getRequest.addEventListener('success', function(e) {
+                    console.log("DB success");
                     success(e.target.result);
                 });
 
                 getRequest.addEventListener('error', function(e) {
+                    console.log("DB error");
                     success({});
                 });
             });

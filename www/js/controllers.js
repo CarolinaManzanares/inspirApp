@@ -4,13 +4,8 @@ angular.module('starter.controllers', ['inspirapp.db'])
 
 	db.get('1', function(data){
 		$scope.type= data.type;
-		console.log(data.type);
-		if ($scope.type === 'formattext')
-		{
-			$scope.formattext = data.inspiration.split('|');
-			console.log($scope.formattext);
-		}
-		$scope.inspiration = data.inspiration;
+		$scope.title = data.title;
+		$scope.inspiration = ($scope.type === 'formattext') ? data.inspiration.split('|') : data.inspiration;
 		$scope.$apply();
 
 	});
@@ -28,9 +23,7 @@ angular.module('starter.controllers', ['inspirapp.db'])
 .directive('formatText', function(){
 	return{
 		restrict: 'E',
-		templateUrl: '../templates/format-text-view.html',
-		//controller: 'DashCtrl'
-
+		templateUrl: '../templates/format-text-view.html'
 	}
 
 })
@@ -39,8 +32,6 @@ angular.module('starter.controllers', ['inspirapp.db'])
 	return{
 		restrict: 'E',
 		template: '<h1>mp3 Directive</h1>',
-		//controller: 'DashCtrl'
-
 	}
 
 })
@@ -49,8 +40,6 @@ angular.module('starter.controllers', ['inspirapp.db'])
 	return{
 		restrict: 'E',
 		template: '<h1>text Directive</h1>',
-		//controller: 'DashCtrl'
-
 	}
 
 });
